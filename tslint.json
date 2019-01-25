@@ -3,6 +3,15 @@
     "codelyzer"
   ],
   "rules": {
+    "prefer-readonly":true,
+    "interface-name": [true, "always-prefix"],
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
