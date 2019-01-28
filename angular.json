@@ -82,7 +82,8 @@
           "options": {
             "codeCoverage": true,
             "codeCoverageExclude": [
-              "**/*/testing/**/*"
+              "**/*/testing/**/*",
+              "**/*.mock.ts"
             ],
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",

@@ -3,15 +3,20 @@ import { app, BrowserWindow, screen } from 'electron';
 import * as url from 'url';
 import * as dev from 'electron-is-dev';
 
+import sockets from './sockets';
+
 let window: BrowserWindow;
 
-function newWindow(): void {
+function newWindow() {
   window = new BrowserWindow({
     height: screen.getPrimaryDisplay().size.height / 2,
     width: 600,
     show: false,
     frame: false,
+    titleBarStyle: 'hiddenInset',
+    darkTheme: true,
     webPreferences: {
+      nodeIntegration: false,
       backgroundThrottling: false,
     },
   });
@@ -29,6 +34,8 @@ function newWindow(): void {
 
   window.show();
   window.on('closed', () => window = null);
+
+  console.log(sockets.port);
 }
 
 app.on('ready', () => {

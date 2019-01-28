@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatToolbarModule,
   MatIconModule,
@@ -15,7 +14,6 @@ const components = [ToolbarComponent];
   exports: components,
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
   ],

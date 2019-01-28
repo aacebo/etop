@@ -10,10 +10,24 @@ $dark-accent:  mat-palette($mat-amber, A200, A100, A400);
 $dark-warn:    mat-palette($mat-deep-orange);
 $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 
+.active-route {
+  opacity: 1 !important;
+}
+
 .light-theme {
   @include angular-material-theme($app-theme);
+
+  .active-route {
+    border-left: 4px solid mat-color($app-accent) !important;
+    color: mat-color($app-accent) !important;
+  }
 }
 
 .dark-theme {
   @include angular-material-theme($dark-theme);
+
+  .active-route {
+    border-left: 4px solid mat-color($dark-accent) !important;
+    color: mat-color($dark-accent) !important;
+  }
 }

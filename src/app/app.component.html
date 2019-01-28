@@ -1,4 +1,6 @@
-<app-sidenav>
-  <app-toolbar title="test title"></app-toolbar>
-  <router-outlet></router-outlet>
+<app-sidenav [items]="navItems | async">
+  <app-toolbar></app-toolbar>
+  <div class="content-container">
+    <router-outlet></router-outlet>
+  </div>
 </app-sidenav>

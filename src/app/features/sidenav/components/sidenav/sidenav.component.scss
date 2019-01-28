@@ -1,3 +1,13 @@
 mat-sidenav-container {
   height: 100%;
 }
+
+mat-list {
+  margin-top: 50px;
+}
+
+.route {
+  border-left: 4px solid transparent;
+  opacity: .5;
+  outline: none;
+}

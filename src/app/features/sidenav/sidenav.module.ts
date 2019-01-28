@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 import {
   MatIconModule,
   MatSidenavModule,
@@ -15,10 +15,13 @@ const components = [SidenavComponent];
 
 @NgModule({
   declarations: components,
-  exports: components,
+  exports: [
+    ...components,
+    RouterModule,
+  ],
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
+    RouterModule,
     MatIconModule,
     MatSidenavModule,
     MatTooltipModule,

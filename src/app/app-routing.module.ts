@@ -1,10 +1,22 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { ChartsComponent } from './features';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/charts',
+    pathMatch: 'full',
+  },
+  {
+    path: 'charts',
+    component: ChartsComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }
