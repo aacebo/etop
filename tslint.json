@@ -3,7 +3,7 @@
     "codelyzer"
   ],
   "rules": {
-    "prefer-readonly":true,
+    "prefer-readonly": true,
     "interface-name": [true, "always-prefix"],
     "trailing-comma": [
       true,
@@ -55,7 +55,7 @@
     "no-arg": true,
     "no-bitwise": true,
     "no-console": [
-      true,
+      false,
       "debug",
       "info",
       "time",

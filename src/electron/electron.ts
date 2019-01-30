@@ -4,6 +4,7 @@ import * as url from 'url';
 import * as dev from 'electron-is-dev';
 
 import sockets from './sockets';
+import logger from './logger';
 
 let window: BrowserWindow;
 
@@ -35,7 +36,7 @@ function newWindow() {
   window.show();
   window.on('closed', () => window = null);
 
-  console.log(sockets.port);
+  logger.info(sockets.port);
 }
 
 app.on('ready', () => {

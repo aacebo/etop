@@ -5,15 +5,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { CoreModule } from './core';
 import { SidenavModule, ToolbarModule, ChartModule } from './features';
+import { StoreModule, UsageModule, OperatingSystemModule } from './shared';
 
 import 'hammerjs';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     CommonModule,
@@ -24,6 +24,9 @@ import 'hammerjs';
     SidenavModule,
     ToolbarModule,
     ChartModule,
+    StoreModule.forRoot(),
+    UsageModule,
+    OperatingSystemModule,
   ],
   bootstrap: [AppComponent],
 })
