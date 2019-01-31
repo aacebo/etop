@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { SidenavModule, ToolbarModule } from './features';
+import { OperatingSystemService, UsageService, SocketService, StoreModule, UsageModule, OperatingSystemModule } from './shared';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -13,9 +14,17 @@ describe('AppComponent', () => {
         BrowserAnimationsModule,
         SidenavModule,
         ToolbarModule,
+        StoreModule.forRoot({}),
+        UsageModule,
+        OperatingSystemModule,
       ],
       declarations: [
         AppComponent,
+      ],
+      providers: [
+        OperatingSystemService,
+        UsageService,
+        SocketService,
       ],
     }).compileComponents();
   }));

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
-export class StoreService<T> extends BehaviorSubject<T> {
+export class StoreService<T = any> extends BehaviorSubject<T> {
   constructor(value: T) {
     super(value);
   }
@@ -13,7 +13,7 @@ export class StoreService<T> extends BehaviorSubject<T> {
     this.next(data);
   }
 
-  get(key: string) {
+  get(key: keyof T) {
     return this.value[key];
   }
 }

@@ -1,3 +1,5 @@
+import { StoreService } from './services';
+
 export class StoreState {
   private static _instance: StoreState;
 
@@ -9,7 +11,7 @@ export class StoreState {
     return StoreState._instance;
   }
 
-  state: any = {};
+  state: StoreService = new StoreService({});
 
   private constructor() { }
 }

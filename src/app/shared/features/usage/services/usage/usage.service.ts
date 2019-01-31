@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 
 import { IUsageState } from '../../usage.state';
 import { StoreService } from '../../../store';
@@ -8,9 +8,21 @@ import { IUsage } from '../../models';
 export class UsageService {
   get value() { return this.storeService.value; }
 
-  constructor(private readonly storeService: StoreService<IUsageState>) { }
+  constructor(
+    @Inject('usage') private readonly storeService: StoreService<IUsageState>,
+  ) { }
 
-  set(key: keyof IUsageState, value: IUsage) {
-    this.storeService.set(key, value);
+  setActive(value: IUsage) {
+    const active = this.value.active;
+    const history = this.value.history.slice();
+
+    if (history.length === 100) {
+      history.pop();
+    }
+
+    history.unshift(active);
+
+    this.storeService.set('active', value);
+    this.storeService.set('history', history);
   }
 }

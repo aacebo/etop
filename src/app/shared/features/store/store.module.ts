@@ -8,25 +8,30 @@ export class StoreModule {
   private static _state = StoreState.instance;
 
   static forRoot<T>(state?: T): ModuleWithProviders {
-    this._state.state = state ? state : {};
+    this._state.state = new StoreService<T>({
+      ...state,
+      ...this._state.state.value,
+    });
 
     return {
       ngModule: StoreModule,
       providers: [{
         provide: StoreService,
-        useValue: new StoreService<T>({ ...this._state.state }),
+        useValue: this._state.state,
       }],
     };
   }
 
   static forFeature<T>(name: string, state?: T): ModuleWithProviders {
-    this._state.state[name] = state;
+    const value = this._state.state.value;
+    value[name] = new StoreService<T>({ ...state });
+    this._state.state.next(value);
 
     return {
       ngModule: StoreModule,
       providers: [{
-        provide: StoreService,
-        useValue: new StoreService<T>({ ...this._state.state[name] }),
+        provide: name,
+        useValue: this._state.state.value[name],
       }],
     };
   }
