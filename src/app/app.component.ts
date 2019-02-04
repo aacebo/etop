@@ -8,7 +8,6 @@ import {
   IUsage,
   OperatingSystemService,
   UsageService,
-  StoreService,
 } from './shared';
 
 @Component({
@@ -26,18 +25,19 @@ export class AppComponent implements OnInit {
 
   constructor(
     private readonly socketService: SocketService,
-    private readonly storeService: StoreService,
     private readonly usageService: UsageService,
     private readonly osService: OperatingSystemService,
   ) { }
 
   ngOnInit() {
-    this.socketService.on('connect', () => {
+    console.log(this.socketService.subscribe);
+    this.socketService.subscribe('connect', () => {
+      console.log('test');
       this.socketService.send('os', null, (data: IOperatingSystem) => {
         this.osService.setOs(data);
       });
 
-      this.socketService.on('usage', (data: IUsage) => {
+      this.socketService.subscribe('usage', (data: IUsage) => {
         this.usageService.setActive(data);
       });
     });

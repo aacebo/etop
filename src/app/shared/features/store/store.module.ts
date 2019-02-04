@@ -5,7 +5,7 @@ import { StoreState } from './store.state';
 
 @NgModule({})
 export class StoreModule {
-  private static _state = StoreState.instance;
+  private static readonly _state = StoreState.instance;
 
   static forRoot<T>(state?: T): ModuleWithProviders {
     this._state.state = new StoreService<T>({

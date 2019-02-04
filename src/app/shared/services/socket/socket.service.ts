@@ -13,11 +13,11 @@ export class SocketService {
     this._socket = SocketIOClient(`ws://localhost:${environment.port}`);
   }
 
-  send(event: string, data?: any, cb?: (...args) => void) {
-    this._socket.emit(event, data, cb);
+  send(e: string, data?: any, cb?: (...args) => void) {
+    this._socket.emit(e, data, cb);
   }
 
-  on(event: string, cb: (...args) => void) {
-    this._socket.on(event, cb);
+  subscribe(e: string, cb: (...args) => void) {
+    this._socket.on(e, cb);
   }
 }

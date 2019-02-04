@@ -4,11 +4,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { SidenavModule, ToolbarModule } from './features';
-import { OperatingSystemService, UsageService, SocketService, StoreModule, UsageModule, OperatingSystemModule } from './shared';
+import {
+  SocketService,
+  socketServiceMockProvider,
+  StoreModule,
+  UsageModule,
+  OperatingSystemModule,
+} from './shared';
 
 describe('AppComponent', () => {
+  let component: AppComponent;
+  let socketService: SocketService;
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      declarations: [AppComponent],
       imports: [
         RouterTestingModule,
         BrowserAnimationsModule,
@@ -18,20 +28,26 @@ describe('AppComponent', () => {
         UsageModule,
         OperatingSystemModule,
       ],
-      declarations: [
-        AppComponent,
-      ],
       providers: [
-        OperatingSystemService,
-        UsageService,
-        SocketService,
+        socketServiceMockProvider,
       ],
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
+  beforeEach(() => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    component = fixture.debugElement.componentInstance;
+    socketService = TestBed.get(SocketService);
+  });
+
+  it('should create the app', () => {
+    expect(component).toBeTruthy();
+    expect(socketService).toBeTruthy();
+  });
+
+  it('should initialize', () => {
+    const spy = spyOn(socketService, 'subscribe');
+    component.ngOnInit();
+    expect(spy).toHaveBeenCalledTimes(2);
   });
 });

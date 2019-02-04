@@ -83,7 +83,9 @@
             "codeCoverage": true,
             "codeCoverageExclude": [
               "**/*/testing/**/*",
-              "**/*.mock.ts"
+              "**/*.mock.ts",
+              "**/*.stub.ts",
+              "**/socket.service.ts"
             ],
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
