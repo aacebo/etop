@@ -19,6 +19,9 @@ class Usage {
 
       system.processes().then(data => this.output.emit('processes', data))
                         .catch(err => logger.error(err));
+
+      system.battery().then(data => this.output.emit('battery', data))
+                      .catch(err => logger.error(err));
     }, 2000);
   }
 }

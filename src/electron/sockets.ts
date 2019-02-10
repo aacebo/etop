@@ -31,6 +31,10 @@ class Sockets {
         socket.emit('processes', data);
       });
 
+      usage.output.on('battery', data => {
+        socket.emit('battery', data);
+      });
+
       socket.on('system', (data, fn) => {
         system.system().then(res => fn(res))
                        .catch(err => logger.error(err));

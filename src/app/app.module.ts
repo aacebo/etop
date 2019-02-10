@@ -8,7 +8,15 @@ import { AppComponent } from './app.component';
 
 import { CoreModule } from './core';
 import { SidenavModule, ToolbarModule, ChartModule } from './features';
-import { StoreModule, CpuModule, MemoryModule, SystemModule, ProcessesModule } from './shared';
+import {
+  StoreModule,
+  CpuModule,
+  MemoryModule,
+  SystemModule,
+  ProcessesModule,
+  BatteryModule,
+  NetworkModule,
+} from './shared';
 
 import 'hammerjs';
 
@@ -29,6 +37,8 @@ import 'hammerjs';
     MemoryModule,
     SystemModule,
     ProcessesModule,
+    BatteryModule,
+    NetworkModule,
   ],
   bootstrap: [AppComponent],
 })
