@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { StoreService } from './services';
+import { StoreService } from './store.service';
 import { StoreState } from './store.state';
 
 @NgModule({})

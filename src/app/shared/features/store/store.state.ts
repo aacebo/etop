@@ -1,4 +1,4 @@
-import { StoreService } from './services';
+import { StoreService } from './store.service';
 
 export class StoreState {
   private static _instance: StoreState;

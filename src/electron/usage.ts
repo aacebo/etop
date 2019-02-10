@@ -1,4 +1,4 @@
-import * as pidusage from 'pidusage';
+import * as system from 'systeminformation';
 import { EventEmitter } from 'events';
 
 import logger from './logger';
@@ -6,18 +6,20 @@ import logger from './logger';
 class Usage {
   readonly output = new EventEmitter();
 
-  private readonly _interval = 1000;
-
   constructor() {
     setInterval(() => {
-      pidusage(process.pid, (err, stats) => {
-        if (err) {
-          logger.error(err);
-        }
+      system.cpu().then(data => this.output.emit('cpu', data))
+                  .catch(err => logger.error(err));
 
-        this.output.emit('stats', stats);
-      });
-    }, this._interval);
+      system.mem().then(data => this.output.emit('memory', data))
+                  .catch(err => logger.error(err));
+
+      system.networkStats().then(data => this.output.emit('network', data))
+                           .catch(err => logger.error(err));
+
+      system.processes().then(data => this.output.emit('processes', data))
+                        .catch(err => logger.error(err));
+    }, 2000);
   }
 }
 

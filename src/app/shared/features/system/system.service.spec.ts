@@ -1,13 +1,13 @@
-import { OperatingSystemService } from './os.service';
-import { StoreService } from '../../../store';
+import { SystemService } from './system.service';
+import { StoreService } from '../store';
 
-describe('OperatingSystemService', () => {
-  let service: OperatingSystemService;
+describe('SystemService', () => {
+  let service: SystemService;
   let store: StoreService;
 
   beforeEach(() => {
     store = new StoreService({});
-    service = new OperatingSystemService(store);
+    service = new SystemService(store);
   });
 
   it('value should equal store state', () => {
@@ -16,7 +16,7 @@ describe('OperatingSystemService', () => {
 
   it('should set os value', () => {
     const spy = spyOn(store, 'next');
-    service.setOs(null);
+    service.set('system', null);
     expect(spy).toHaveBeenCalledTimes(1);
   });
 });

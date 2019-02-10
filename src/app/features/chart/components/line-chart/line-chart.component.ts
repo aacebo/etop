@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+
+import { ILineChartData } from '../../models';
 
 @Component({
   selector: 'app-line-chart',
@@ -6,11 +8,6 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./line-chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LineChartComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class LineChartComponent {
+  @Input() data: ILineChartData[] = [];
 }

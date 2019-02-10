@@ -7,6 +7,7 @@ import { IEnvironment } from './environment.model';
 export const environment: IEnvironment = {
   production: false,
   port: 3000,
+  queueSize: 100,
 };
 
 /*

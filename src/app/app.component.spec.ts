@@ -48,6 +48,6 @@ describe('AppComponent', () => {
   it('should initialize', () => {
     const spy = spyOn(socketService, 'subscribe');
     component.ngOnInit();
-    expect(spy).toHaveBeenCalledTimes(2);
+    expect(spy).toHaveBeenCalled();
   });
 });

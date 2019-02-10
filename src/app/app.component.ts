@@ -4,10 +4,10 @@ import { BehaviorSubject } from 'rxjs';
 import { ISidenavItem } from './features';
 import {
   SocketService,
-  IOperatingSystem,
-  IUsage,
-  OperatingSystemService,
-  UsageService,
+  SystemService,
+  CpuService,
+  MemoryService,
+  ProcessesService,
 } from './shared';
 
 @Component({
@@ -25,21 +25,20 @@ export class AppComponent implements OnInit {
 
   constructor(
     private readonly socketService: SocketService,
-    private readonly usageService: UsageService,
-    private readonly osService: OperatingSystemService,
+    private readonly systemService: SystemService,
+    private readonly cpuService: CpuService,
+    private readonly memoryService: MemoryService,
+    private readonly processesService: ProcessesService,
   ) { }
 
   ngOnInit() {
-    console.log(this.socketService.subscribe);
+    /* istanbul ignore next */
     this.socketService.subscribe('connect', () => {
-      console.log('test');
-      this.socketService.send('os', null, (data: IOperatingSystem) => {
-        this.osService.setOs(data);
-      });
-
-      this.socketService.subscribe('usage', (data: IUsage) => {
-        this.usageService.setActive(data);
-      });
+      this.socketService.send('system', null, data => this.systemService.set('system', data));
+      this.socketService.send('os', null, data => this.systemService.set('os', data));
+      this.socketService.subscribe('processes', data => this.processesService.set('processes', data));
+      this.socketService.subscribe('cpu', data => this.cpuService.setActive(data));
+      this.socketService.subscribe('memory', data => this.memoryService.setActive(data));
     });
   }
 }

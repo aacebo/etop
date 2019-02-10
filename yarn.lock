@@ -6751,13 +6751,6 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
-pidusage@^2.0.17:
-  version "2.0.17"
-  resolved "https://registry.yarnpkg.com/pidusage/-/pidusage-2.0.17.tgz#6b4a2b4a09026f0e9828f7e5627837e4c0672581"
-  integrity sha512-N8X5v18rBmlBoArfS83vrnD0gIFyZkXEo7a5pAS2aT0i2OLVymFb2AzVg+v8l/QcXnE1JwZcaXR8daJcoJqtjw==
-  dependencies:
-    safe-buffer "^5.1.2"
-
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
@@ -8371,6 +8364,11 @@ symbol-observable@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/symbol-observable/-/symbol-observable-1.2.0.tgz#c22688aed4eab3cdc2dfeacbb561660560a00804"
   integrity sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==
+
+systeminformation@^4.0.9:
+  version "4.0.9"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-4.0.9.tgz#0b025a2943de7b3be6a6a23e4b7e98a56de6eac3"
+  integrity sha512-7GS8+s5RYpD0uxWvpot6XKb4ixjg+Py/hq/jpUVgIHGSmuMay6Xy4BedzXuu4ATbmiF37oHfSfwgAAA/Y7OvRg==
 
 tapable@^1.0.0, tapable@^1.1.0:
   version "1.1.1"

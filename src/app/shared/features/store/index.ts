@@ -1,3 +1,2 @@
 export { StoreModule } from './store.module';
-
-export * from './services';
+export { StoreService } from './store.service';

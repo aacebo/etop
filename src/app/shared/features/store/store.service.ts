@@ -8,7 +8,7 @@ export class StoreService<T = any> extends BehaviorSubject<T> {
     super(value);
   }
 
-  set(key: keyof T, value: any) {
+  set(key: keyof T, value: T[keyof T]) {
     const data = this.value;
     data[key] = value;
     this.next(data);

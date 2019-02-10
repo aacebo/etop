@@ -1,4 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { ILineChartData } from '../../models';
 
 @Component({
   selector: 'app-charts',
@@ -6,11 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./charts.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ChartsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class ChartsComponent {
+  readonly cpu: Observable<ILineChartData[]>;
+  readonly memory: Observable<ILineChartData[]>;
 }
