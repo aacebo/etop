@@ -10,6 +10,10 @@ describe('SystemService', () => {
     service = new SystemService(store);
   });
 
+  it('should be defined', () => {
+    expect(service).toBeDefined();
+  });
+
   it('value should equal store state', () => {
     expect(service.value).toEqual({});
   });

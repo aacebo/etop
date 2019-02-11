@@ -85,6 +85,7 @@
               "**/*/testing/**/*",
               "**/*.mock.ts",
               "**/*.stub.ts",
+              "**/*.template.ts",
               "**/socket.service.ts"
             ],
             "main": "src/test.ts",

@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { LineChartModule } from '@swimlane/ngx-charts';
 
 import { LineChartComponent } from './line-chart.component';
 
@@ -9,6 +11,7 @@ describe('LineChartComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ LineChartComponent ],
+      imports: [NoopAnimationsModule, LineChartModule],
     })
     .compileComponents();
   }));
