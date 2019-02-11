@@ -8,8 +8,6 @@ import {
   SocketService,
   socketServiceMockProvider,
   StoreModule,
-  UsageModule,
-  OperatingSystemModule,
 } from './shared';
 
 describe('AppComponent', () => {
@@ -25,8 +23,6 @@ describe('AppComponent', () => {
         SidenavModule,
         ToolbarModule,
         StoreModule.forRoot({}),
-        UsageModule,
-        OperatingSystemModule,
       ],
       providers: [
         socketServiceMockProvider,

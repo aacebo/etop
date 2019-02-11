@@ -10,6 +10,7 @@ import { CoreModule } from './core';
 import { SidenavModule, ToolbarModule, ChartModule } from './features';
 import {
   StoreModule,
+  StoreDebugModule,
   CpuModule,
   MemoryModule,
   SystemModule,
@@ -32,7 +33,10 @@ import 'hammerjs';
     SidenavModule,
     ToolbarModule,
     ChartModule,
+
     StoreModule.forRoot(),
+    StoreDebugModule,
+
     CpuModule,
     MemoryModule,
     SystemModule,
