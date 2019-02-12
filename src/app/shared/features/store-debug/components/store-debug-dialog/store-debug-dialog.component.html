@@ -1,3 +1,6 @@
-<p>
-  store-debug-dialog works!
-</p>
+<mat-dialog-content>
+  <app-json-tree-node *ngFor="let key of keys | async"
+                      [key]="key"
+                      [value]="(storeService | async)[key] | async">
+  </app-json-tree-node>
+</mat-dialog-content>

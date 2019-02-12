@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { StoreDebugDialogComponent } from './store-debug-dialog.component';
-import { StoreDebugTreeComponent } from '../store-debug-tree';
 import { StoreModule } from '../../../store';
+import { JsonTreeModule } from '../../../json-tree';
 
 describe('StoreDebugDialogComponent', () => {
   let component: StoreDebugDialogComponent;
@@ -11,8 +11,8 @@ describe('StoreDebugDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StoreDebugDialogComponent, StoreDebugTreeComponent ],
-      imports: [StoreModule.forRoot({}), MatDialogModule],
+      declarations: [ StoreDebugDialogComponent ],
+      imports: [StoreModule.forRoot({}), MatDialogModule, JsonTreeModule],
     })
     .compileComponents();
   }));

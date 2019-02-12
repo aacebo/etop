@@ -1,0 +1,49 @@
+.json-tree-node {
+  color: white;
+  user-select: none;
+  font-family: 'Lucida Grande', sans-serif;
+  font-size: 12px;
+
+  .json-tree-node--title {
+    &.nocomplex {
+      display: inline-block;
+    }
+
+    .json-tree-node--toggle {
+      display: inline-block;
+      cursor: pointer;
+      font-size: 8px;
+      margin-right: 5px;
+      color: white;
+    }
+
+    .json-tree-node--key {
+      display: inline-block;
+      margin-right: 5px;
+      cursor: pointer;
+      color: deeppink;
+
+      &.active {
+        color: yellow;
+      }
+    }
+  }
+
+  .json-tree-node--value {
+    display: inline-block;
+    margin-left: 20px;
+    color: aqua;
+
+    &.nocomplex {
+      margin-left: 0;
+    }
+
+    &.string {
+      color: salmon;
+    }
+  }
+
+  .json-tree-node--summary {
+    display: inline-block;
+  }
+}

@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 import { MatDialogModule, MatButtonModule, MatIconModule, MatTooltipModule } from '@angular/material';
 
 import { StoreModule } from '../store';
-import { StoreDebugComponent, StoreDebugDialogComponent, StoreDebugTreeComponent } from './components';
+import { JsonTreeModule } from '../json-tree';
+import { StoreDebugComponent, StoreDebugDialogComponent } from './components';
 
 @NgModule({
-  declarations: [StoreDebugComponent, StoreDebugDialogComponent, StoreDebugTreeComponent],
+  declarations: [StoreDebugComponent, StoreDebugDialogComponent],
   exports: [StoreDebugComponent],
   entryComponents: [StoreDebugDialogComponent],
   imports: [
@@ -16,6 +17,7 @@ import { StoreDebugComponent, StoreDebugDialogComponent, StoreDebugTreeComponent
     MatIconModule,
     MatTooltipModule,
     StoreModule,
+    JsonTreeModule,
   ],
 })
 export class StoreDebugModule { }

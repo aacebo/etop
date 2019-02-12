@@ -1,0 +1,48 @@
+<div class="json-tree-node">
+
+  <div class="json-tree-node--title"
+       [ngClass]="{ nocomplex: !isComplex || !expanded }"
+       (click)="toggle()">
+
+    <div class="json-tree-node--toggle"
+         *ngIf="isComplex">
+      <span *ngIf="!expanded">&#9654;</span>
+      <span *ngIf="expanded">&#9660;</span>
+    </div>
+    <div class="json-tree-node--key"
+         [ngClass]="{ active: expanded }">
+      {{ key }}:
+    </div>
+  </div>
+
+  <div class="json-tree-node--value"
+       *ngIf="expanded || !isComplex"
+       [ngClass]="{ nocomplex: !isComplex, string: isString }">
+
+    <div *ngIf="!isComplex">
+      {{ (value) ? value : 'null' }}
+    </div>
+
+    <div *ngIf="isComplex">
+      <div *ngIf="isArray">
+        <app-json-tree-node *ngFor="let node of value; index as i"
+                            [key]="i"
+                            [value]="node">
+        </app-json-tree-node>
+      </div>
+
+      <div *ngIf="isObject">
+        <app-json-tree-node *ngFor="let key of keys"
+                            [key]="key"
+                            [value]="value[key]">
+        </app-json-tree-node>
+      </div>
+    </div>
+  </div>
+
+  <div class="json-tree-node--summary"
+       *ngIf="!expanded && isComplex">
+    <div *ngIf="isObject" [innerHTML]="'{ ... }'" [title]="stringify"></div>
+    <div *ngIf="isArray" [innerHTML]="'[ ... ]'" [title]="value.length"></div>
+  </div>
+</div>

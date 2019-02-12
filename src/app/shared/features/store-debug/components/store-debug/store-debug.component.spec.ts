@@ -4,6 +4,7 @@ import { MatIconModule, MatButtonModule, MatDialogModule, MatDialog } from '@ang
 
 import { StoreDebugComponent } from './store-debug.component';
 import { StoreDebugDialogComponent } from '../store-debug-dialog';
+import { JsonTreeModule } from '../../../json-tree';
 
 describe('StoreDebugComponent', () => {
   let component: StoreDebugComponent;
@@ -17,6 +18,7 @@ describe('StoreDebugComponent', () => {
         MatIconModule,
         MatButtonModule,
         MatDialogModule,
+        JsonTreeModule,
       ],
     }).overrideModule(BrowserAnimationsModule, ({
       set: {

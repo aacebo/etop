@@ -1,6 +1,8 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import { StoreService } from '../../../store';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-store-debug-dialog',
@@ -9,6 +11,9 @@ import { StoreService } from '../../../store';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StoreDebugDialogComponent {
-  constructor(private readonly storeService: StoreService) {
+  readonly keys: Observable<string[]>;
+
+  constructor(readonly storeService: StoreService) {
+    this.keys = this.storeService.pipe(map(v => Object.keys(v)));
   }
 }
