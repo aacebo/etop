@@ -9,6 +9,7 @@
       <span *ngIf="!expanded">&#9654;</span>
       <span *ngIf="expanded">&#9660;</span>
     </div>
+
     <div class="json-tree-node--key"
          [ngClass]="{ active: expanded }">
       {{ key }}:
@@ -20,23 +21,12 @@
        [ngClass]="{ nocomplex: !isComplex, string: isString }">
 
     <div *ngIf="!isComplex">
-      {{ (value) ? value : 'null' }}
+      {{ value ? value : 'null' }}
     </div>
 
     <div *ngIf="isComplex">
-      <div *ngIf="isArray">
-        <app-json-tree-node *ngFor="let node of value; index as i"
-                            [key]="i"
-                            [value]="node">
-        </app-json-tree-node>
-      </div>
-
-      <div *ngIf="isObject">
-        <app-json-tree-node *ngFor="let key of keys"
-                            [key]="key"
-                            [value]="value[key]">
-        </app-json-tree-node>
-      </div>
+      <ng-container *ngTemplateOutlet="isArray ? array : object;">
+      </ng-container>
     </div>
   </div>
 
@@ -46,3 +36,17 @@
     <div *ngIf="isArray" [innerHTML]="'[ ... ]'" [title]="value.length"></div>
   </div>
 </div>
+
+<ng-template #object>
+  <app-json-tree-node *ngFor="let key of keys"
+                      [key]="key"
+                      [value]="value[key]">
+  </app-json-tree-node>
+</ng-template>
+
+<ng-template #array>
+  <app-json-tree-node *ngFor="let node of value; index as i"
+                      [key]="i"
+                      [value]="node">
+  </app-json-tree-node>
+</ng-template>

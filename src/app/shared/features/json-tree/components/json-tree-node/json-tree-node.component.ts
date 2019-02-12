@@ -4,7 +4,7 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
   selector: 'app-json-tree-node',
   templateUrl: './json-tree-node.component.html',
   styleUrls: ['./json-tree-node.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class JsonTreeNodeComponent {
   @Input() key: string;
