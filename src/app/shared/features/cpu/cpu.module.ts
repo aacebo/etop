@@ -6,9 +6,7 @@ import { CpuService } from './cpu.service';
 
 @NgModule({
   imports: [
-    StoreModule.forFeature<ICpuState>('cpu', {
-      history: [],
-    }),
+    StoreModule.forFeature<ICpuState>('cpu', {}),
   ],
   providers: [
     CpuService,

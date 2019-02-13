@@ -7,6 +7,7 @@ import usage from './usage';
 class Sockets {
   readonly port = 3000;
 
+  private readonly _events = ['cpu', 'memory', 'network', 'processes', 'battery', 'load'];
   private readonly _io = io(this.port, {
     pingTimeout: 60000,
   });
@@ -15,25 +16,9 @@ class Sockets {
     this._io.on('connection', socket => {
       logger.log('connected!');
 
-      usage.output.on('cpu', data => {
-        socket.emit('cpu', data);
-      });
-
-      usage.output.on('memory', data => {
-        socket.emit('memory', data);
-      });
-
-      usage.output.on('network', data => {
-        socket.emit('network', data);
-      });
-
-      usage.output.on('processes', data => {
-        socket.emit('processes', data);
-      });
-
-      usage.output.on('battery', data => {
-        socket.emit('battery', data);
-      });
+      for (const event of this._events) {
+        usage.output.on(event, data => socket.emit(event, data));
+      }
 
       socket.on('system', (data, fn) => {
         system.system().then(res => fn(res))

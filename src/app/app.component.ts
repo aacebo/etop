@@ -10,6 +10,7 @@ import {
   ProcessesService,
   BatteryService,
   NetworkService,
+  LoadService,
 } from './shared';
 
 @Component({
@@ -33,6 +34,7 @@ export class AppComponent implements OnInit {
     private readonly processesService: ProcessesService,
     private readonly batteryService: BatteryService,
     private readonly networkService: NetworkService,
+    private readonly loadService: LoadService,
   ) { }
 
   ngOnInit() {
@@ -43,8 +45,9 @@ export class AppComponent implements OnInit {
 
       this.socketService.subscribe('processes', data => this.processesService.set('processes', data));
       this.socketService.subscribe('battery', data => this.batteryService.set('battery', data));
+      this.socketService.subscribe('cpu', data => this.cpuService.set('cpu', data));
 
-      this.socketService.subscribe('cpu', data => this.cpuService.setActive(data));
+      this.socketService.subscribe('load', data => this.loadService.setActive(data));
       this.socketService.subscribe('memory', data => this.memoryService.setActive(data));
       this.socketService.subscribe('network', data => this.networkService.setActive(data));
     });

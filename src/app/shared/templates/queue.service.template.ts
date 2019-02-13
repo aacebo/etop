@@ -17,10 +17,10 @@ export class QueueServiceTemplate<T> {
     const history = this.value.history.slice();
 
     if (history.length === environment.queueSize) {
-      history.pop();
+      history.shift();
     }
 
-    history.unshift(active);
+    history.push(active);
 
     this.storeService.set('active', value);
     this.storeService.set('history', history);

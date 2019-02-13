@@ -1,7 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { Observable } from 'rxjs';
-
-import { ILineChartData } from '../../models';
 
 @Component({
   selector: 'app-charts',
@@ -9,7 +6,4 @@ import { ILineChartData } from '../../models';
   styleUrls: ['./charts.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ChartsComponent {
-  readonly cpu: Observable<ILineChartData[]>;
-  readonly memory: Observable<ILineChartData[]>;
-}
+export class ChartsComponent { }

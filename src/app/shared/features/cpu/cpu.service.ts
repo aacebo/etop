@@ -1,13 +1,17 @@
 import { Injectable, Inject } from '@angular/core';
-import { Systeminformation } from 'systeminformation';
 
 import { ICpuState } from './cpu.state';
 import { StoreService } from '../store';
-import { QueueServiceTemplate } from '../../templates';
 
 @Injectable()
-export class CpuService extends QueueServiceTemplate<Systeminformation.CpuData> {
+export class CpuService {
+  get value() { return this.storeService.value; }
+
   constructor(
     @Inject('cpu') readonly storeService: StoreService<ICpuState>,
-  ) { super(storeService); }
+  ) { }
+
+  set(key: keyof ICpuState, value: ICpuState[keyof ICpuState]) {
+    this.storeService.set(key, value);
+  }
 }

@@ -22,6 +22,9 @@ class Usage {
 
       system.battery().then(data => this.output.emit('battery', data))
                       .catch(err => logger.error(err));
+
+      system.currentLoad().then(data => this.output.emit('load', data))
+                          .catch(err => logger.error(err));
     }, 2000);
   }
 }

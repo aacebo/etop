@@ -8,3 +8,4 @@ export * from './memory';
 export * from './processes';
 export * from './battery';
 export * from './network';
+export * from './load';
