@@ -1,1 +1,1 @@
-export { ILineChartData } from './line-chart-data.model';
+export { IChartData } from './chart-data.model';

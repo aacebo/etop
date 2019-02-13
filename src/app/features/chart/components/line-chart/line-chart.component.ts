@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 
-import { ILineChartData } from '../../models';
+import { IChartData } from '../../models';
 
 @Component({
   selector: 'app-line-chart',
@@ -9,5 +9,5 @@ import { ILineChartData } from '../../models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LineChartComponent {
-  @Input() data: ILineChartData[] = [];
+  @Input() data: IChartData[] = [];
 }

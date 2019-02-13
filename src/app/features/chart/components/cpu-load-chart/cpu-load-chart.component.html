@@ -1,6 +1,7 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title>CPU Load</mat-card-title>
+    <mat-card-title>CPU</mat-card-title>
+    <mat-card-subtitle>{{ desc | async }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <app-line-chart [data]="data | async"></app-line-chart>
