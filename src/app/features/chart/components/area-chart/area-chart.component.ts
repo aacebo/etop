@@ -3,12 +3,12 @@ import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { IChartData } from '../../models';
 
 @Component({
-  selector: 'app-line-chart',
-  templateUrl: './line-chart.component.html',
-  styleUrls: ['./line-chart.component.scss'],
+  selector: 'app-area-chart',
+  templateUrl: './area-chart.component.html',
+  styleUrls: ['./area-chart.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LineChartComponent {
+export class AreaChartComponent {
   @Input() data: IChartData[] = [];
   @Input() ymin = 0;
   @Input() ymax = 100;

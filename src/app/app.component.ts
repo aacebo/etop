@@ -21,9 +21,13 @@ import {
 })
 export class AppComponent implements OnInit {
   readonly navItems = new BehaviorSubject<ISidenavItem[]>([
-    { icon: 'mdi-chart-bar', tooltip: 'Charts', route: ['/charts'] },
+    { icon: 'mdi-view-dashboard', tooltip: 'Dashboard', route: ['/dashboard'] },
+    { icon: 'mdi-chip', tooltip: 'CPU', route: ['/cpu'] },
+    { icon: 'mdi-memory', tooltip: 'Memory', route: ['/memory'] },
+    { icon: 'mdi-harddisk', tooltip: 'File System', route: ['/file-system'] },
+    { icon: 'mdi-wifi', tooltip: 'Network', route: ['/network'] },
+    { icon: 'mdi-battery-outline', tooltip: 'Battery', route: ['/battery'] },
     { icon: 'mdi-format-list-bulleted', tooltip: 'Process List', route: ['/process-list'] },
-    { icon: 'mdi-history', tooltip: 'History', route: ['/history'] },
   ]);
 
   constructor(

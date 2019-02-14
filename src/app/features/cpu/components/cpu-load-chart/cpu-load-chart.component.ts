@@ -2,7 +2,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { IChartData } from '../../models';
+import { IChartData } from '../../../chart';
 import { LoadService } from '../../../../shared';
 
 @Component({

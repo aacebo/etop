@@ -14,8 +14,8 @@ class Usage {
       system.mem().then(data => this.output.emit('memory', data))
                   .catch(err => logger.error(err));
 
-      system.networkStats().then(data => this.output.emit('network', data))
-                           .catch(err => logger.error(err));
+      system.networkStats('*').then(data => this.output.emit('network', data))
+                              .catch(err => logger.error(err));
 
       system.processes().then(data => this.output.emit('processes', data))
                         .catch(err => logger.error(err));

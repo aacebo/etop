@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChartsComponent } from './charts.component';
+import { NetworkUsageChartComponent } from './network-usage-chart.component';
 
-describe('ChartsComponent', () => {
-  let component: ChartsComponent;
-  let fixture: ComponentFixture<ChartsComponent>;
+describe('NetworkUsageChartComponent', () => {
+  let component: NetworkUsageChartComponent;
+  let fixture: ComponentFixture<NetworkUsageChartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChartsComponent ],
+      declarations: [ NetworkUsageChartComponent ],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChartsComponent);
+    fixture = TestBed.createComponent(NetworkUsageChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,3 +1,3 @@
 export { ChartModule } from './chart.module';
 
-export * from './pages';
+export * from './models';

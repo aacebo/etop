@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CoreModule } from './core';
-import { SidenavModule, ToolbarModule, ChartModule } from './features';
+import { SidenavModule, ToolbarModule, DashboardModule } from './features';
 import {
   StoreModule,
   StoreDebugModule,
@@ -33,7 +33,7 @@ import 'hammerjs';
     CoreModule,
     SidenavModule,
     ToolbarModule,
-    ChartModule,
+    DashboardModule,
 
     StoreModule.forRoot(),
     StoreDebugModule,

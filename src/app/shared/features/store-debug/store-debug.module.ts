@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDialogModule, MatButtonModule, MatIconModule, MatTooltipModule } from '@angular/material';
+import {
+  MatDialogModule,
+  MatButtonModule,
+  MatIconModule,
+  MatTooltipModule,
+} from '@angular/material';
 
 import { StoreModule } from '../store';
 import { JsonTreeModule } from '../json-tree';

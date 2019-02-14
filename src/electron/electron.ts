@@ -10,8 +10,10 @@ let window: BrowserWindow;
 
 function newWindow() {
   window = new BrowserWindow({
-    height: screen.getPrimaryDisplay().size.height / 2,
-    width: 600,
+    height: 650,
+    width: 845,
+    minWidth: 650,
+    minHeight: 650,
     show: false,
     frame: false,
     titleBarStyle: 'hiddenInset',

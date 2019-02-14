@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Network</mat-card-title>
+    <mat-card-subtitle>{{ desc | async }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <app-line-chart [data]="data | async"
+                    [ymin]="undefined"
+                    [ymax]="undefined">
+    </app-line-chart>
+  </mat-card-content>
+</mat-card>
