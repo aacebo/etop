@@ -4,3 +4,4 @@ export * from './dashboard';
 export * from './cpu';
 export * from './memory';
 export * from './network';
+export * from './file-system';

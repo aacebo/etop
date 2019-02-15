@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { DashboardComponent, CpuComponent } from './features';
+import {
+  DashboardComponent,
+  CpuComponent,
+  MemoryComponent,
+  NetworkComponent,
+  FileSystemComponent,
+} from './features';
 
 const routes: Routes = [
   {
@@ -16,6 +22,18 @@ const routes: Routes = [
   {
     path: 'cpu',
     component: CpuComponent,
+  },
+  {
+    path: 'memory',
+    component: MemoryComponent,
+  },
+  {
+    path: 'network',
+    component: NetworkComponent,
+  },
+  {
+    path: 'file-system',
+    component: FileSystemComponent,
   },
 ];
 

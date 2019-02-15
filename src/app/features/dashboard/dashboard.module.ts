@@ -5,6 +5,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CpuModule } from '../cpu';
 import { MemoryModule } from '../memory';
 import { NetworkModule } from '../network';
+import { FileSystemModule } from '../file-system';
+
 import { DashboardComponent } from './pages';
 
 @NgModule({
@@ -16,6 +18,7 @@ import { DashboardComponent } from './pages';
     CpuModule,
     MemoryModule,
     NetworkModule,
+    FileSystemModule,
   ],
 })
 export class DashboardModule { }
