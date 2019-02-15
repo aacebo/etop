@@ -1,5 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material';
 
+import { ChartModule } from '../../../chart';
+import { LoadModule } from '../../../../shared';
 import { CpuLoadChartComponent } from './cpu-load-chart.component';
 
 describe('CpuLoadChartComponent', () => {
@@ -9,6 +13,7 @@ describe('CpuLoadChartComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ CpuLoadChartComponent ],
+      imports: [NoopAnimationsModule, MatCardModule, ChartModule, LoadModule],
     })
     .compileComponents();
   }));

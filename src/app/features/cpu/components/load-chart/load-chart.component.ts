@@ -18,13 +18,13 @@ export class LoadChartComponent {
   constructor(
     private readonly loadService: LoadService,
   ) {
-    this.desc = this.loadService.storeService.pipe(
+    this.desc = this.loadService.store.pipe(
       map(v => v.active ? `System: ${v.active.currentload_system.toFixed(2)}%,` +
                           ` User: ${v.active.currentload_user.toFixed(2)}%,` +
                           ` Idle: ${v.active.currentload_idle.toFixed(2)}%` : ''),
     );
 
-    this.data = this.loadService.storeService.pipe(map(v => ([
+    this.data = this.loadService.store.pipe(map(v => ([
       {
         name: 'Total',
         series: v.history.map((o, i) => ({

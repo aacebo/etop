@@ -1,12 +1,12 @@
 import { SystemService } from './system.service';
-import { StoreService } from '../store';
+import { Store } from '../store';
 
 describe('SystemService', () => {
   let service: SystemService;
-  let store: StoreService;
+  let store: Store;
 
   beforeEach(() => {
-    store = new StoreService({});
+    store = new Store({});
     service = new SystemService(store);
   });
 

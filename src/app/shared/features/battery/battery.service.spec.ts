@@ -1,14 +1,14 @@
 import { async } from '@angular/core/testing';
 
 import { BatteryService } from './battery.service';
-import { StoreService } from '../store';
+import { Store } from '../store';
 
 describe('BatteryService', () => {
   let service: BatteryService;
-  let store: StoreService;
+  let store: Store;
 
   beforeEach(async(() => {
-    store = new StoreService({});
+    store = new Store({});
     service = new BatteryService(store);
   }));
 

@@ -1,10 +1,10 @@
-import { StoreService } from './store.service';
+import { Store } from './store.service';
 
-describe('StoreService', () => {
-  let service: StoreService<{ test: string }>;
+describe('Store', () => {
+  let service: Store<{ test: string }>;
 
   beforeEach(() => {
-    service = new StoreService<{ test: string }>({ test: 'test' });
+    service = new Store<{ test: string }>({ test: 'test' });
   });
 
   it('should be created', () => {

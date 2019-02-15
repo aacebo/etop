@@ -1,15 +1,15 @@
 import { map } from 'rxjs/operators';
 
-import { StoreService } from '../features/store';
+import { Store } from '../features/store';
 import { environment } from '../../../environments/environment';
 
 export class QueueServiceTemplate<T> {
-  get value() { return this.storeService.value; }
-  get active() { return this.storeService.pipe(map(v => v.active)); }
-  get history() { return this.storeService.pipe(map(v => v.history)); }
+  get value() { return this.store.value; }
+  get active() { return this.store.pipe(map(v => v.active)); }
+  get history() { return this.store.pipe(map(v => v.history)); }
 
   constructor(
-    readonly storeService: StoreService<{ active?: T; history: T[]; }>,
+    readonly store: Store<{ active?: T; history: T[]; }>,
   ) { }
 
   setActive(value: T) {
@@ -22,7 +22,7 @@ export class QueueServiceTemplate<T> {
 
     history.push(active);
 
-    this.storeService.set('active', value);
-    this.storeService.set('history', history);
+    this.store.set('active', value);
+    this.store.set('history', history);
   }
 }

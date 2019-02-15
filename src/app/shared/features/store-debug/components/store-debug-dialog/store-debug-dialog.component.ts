@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { StoreService } from '../../../store';
+import { Store } from '../../../store';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -13,7 +13,7 @@ import { map } from 'rxjs/operators';
 export class StoreDebugDialogComponent {
   readonly keys: Observable<string[]>;
 
-  constructor(readonly storeService: StoreService) {
-    this.keys = this.storeService.pipe(map(v => Object.keys(v)));
+  constructor(readonly store: Store) {
+    this.keys = this.store.pipe(map(v => Object.keys(v)));
   }
 }

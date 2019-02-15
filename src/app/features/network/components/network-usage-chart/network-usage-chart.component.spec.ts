@@ -1,5 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material';
 
+import { ChartModule } from '../../../chart';
+import { NetworkModule } from '../../../../shared';
 import { NetworkUsageChartComponent } from './network-usage-chart.component';
 
 describe('NetworkUsageChartComponent', () => {
@@ -9,6 +13,7 @@ describe('NetworkUsageChartComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ NetworkUsageChartComponent ],
+      imports: [NoopAnimationsModule, MatCardModule, ChartModule, NetworkModule],
     })
     .compileComponents();
   }));

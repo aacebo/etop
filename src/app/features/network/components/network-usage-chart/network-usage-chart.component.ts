@@ -18,12 +18,12 @@ export class NetworkUsageChartComponent {
   constructor(
     private readonly networkService: NetworkService,
   ) {
-    this.desc = this.networkService.storeService.pipe(
+    this.desc = this.networkService.store.pipe(
       map(v => v.active ? `OUT: ${v.active.map(o => o.tx_sec).reduce((p, k) => p + k).toFixed(2)},` +
                           ` IN: ${v.active.map(o => o.rx_sec).reduce((p, k) => p + k).toFixed(2)}` : ''),
     );
 
-    this.data = this.networkService.storeService.pipe(
+    this.data = this.networkService.store.pipe(
       map(v => [
         {
           name: 'Packets IN',

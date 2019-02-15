@@ -18,11 +18,11 @@ export class MemoryUsageChartComponent {
   constructor(
     private readonly memoryService: MemoryService,
   ) {
-    this.desc = this.memoryService.storeService.pipe(
+    this.desc = this.memoryService.store.pipe(
       map(v => v.active ? `${((v.active.used / v.active.total) * 100).toFixed(2)}%` : ''),
     );
 
-    this.data = this.memoryService.storeService.pipe(
+    this.data = this.memoryService.store.pipe(
       map(v => [{
         name: 'Memory',
         series: v.history.map((o, i) => ({

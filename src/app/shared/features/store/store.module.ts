@@ -1,6 +1,6 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
 
-import { StoreService } from './store.service';
+import { Store } from './store.service';
 import { StoreState } from './store.state';
 
 @NgModule({})
@@ -8,7 +8,7 @@ export class StoreModule {
   private static readonly _state = StoreState.instance;
 
   static forRoot<T>(state?: T): ModuleWithProviders {
-    this._state.state = new StoreService<T>({
+    this._state.state = new Store<T>({
       ...state,
       ...this._state.state.value,
     });
@@ -16,7 +16,7 @@ export class StoreModule {
     return {
       ngModule: StoreModule,
       providers: [{
-        provide: StoreService,
+        provide: Store,
         useValue: this._state.state,
       }],
     };
@@ -24,7 +24,7 @@ export class StoreModule {
 
   static forFeature<T>(name: string, state?: T): ModuleWithProviders {
     const value = this._state.state.value;
-    value[name] = new StoreService<T>({ ...state });
+    value[name] = new Store<T>({ ...state });
     this._state.state.next(value);
 
     return {

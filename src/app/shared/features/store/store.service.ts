@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
-export class StoreService<T = any> extends BehaviorSubject<T> {
+export class Store<T = any> extends BehaviorSubject<T> {
   constructor(value: T) {
     /* istanbul ignore next */
     super(value);

@@ -1,4 +1,4 @@
-import { StoreService } from './store.service';
+import { Store } from './store.service';
 
 export class StoreState {
   private static _instance: StoreState;
@@ -12,7 +12,7 @@ export class StoreState {
     return StoreState._instance;
   }
 
-  state: StoreService = new StoreService({});
+  state = new Store({});
 
   private constructor() { }
 }

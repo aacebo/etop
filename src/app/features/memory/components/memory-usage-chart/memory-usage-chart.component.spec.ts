@@ -1,5 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material';
 
+import { ChartModule } from '../../../chart';
+import { MemoryModule } from '../../../../shared';
 import { MemoryUsageChartComponent } from './memory-usage-chart.component';
 
 describe('MemoryUsageChartComponent', () => {
@@ -9,6 +13,7 @@ describe('MemoryUsageChartComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ MemoryUsageChartComponent ],
+      imports: [NoopAnimationsModule, MatCardModule, ChartModule, MemoryModule],
     })
     .compileComponents();
   }));
