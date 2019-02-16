@@ -11,6 +11,7 @@ import {
   BatteryService,
   NetworkService,
   LoadService,
+  FileSystemService,
 } from './shared';
 
 @Component({
@@ -39,6 +40,7 @@ export class AppComponent implements OnInit {
     private readonly batteryService: BatteryService,
     private readonly networkService: NetworkService,
     private readonly loadService: LoadService,
+    private readonly fsService: FileSystemService,
   ) { }
 
   ngOnInit() {
@@ -46,6 +48,7 @@ export class AppComponent implements OnInit {
     this.socketService.subscribe('connect', () => {
       this.socketService.send('system', null, data => this.systemService.set('system', data));
       this.socketService.send('os', null, data => this.systemService.set('os', data));
+      this.socketService.send('fs', null, data => this.fsService.set('size', data));
 
       this.socketService.subscribe('processes', data => this.processesService.set('processes', data));
       this.socketService.subscribe('battery', data => this.batteryService.set('battery', data));
@@ -54,6 +57,7 @@ export class AppComponent implements OnInit {
       this.socketService.subscribe('load', data => this.loadService.setActive(data));
       this.socketService.subscribe('memory', data => this.memoryService.setActive(data));
       this.socketService.subscribe('network', data => this.networkService.setActive(data));
+      this.socketService.subscribe('fs', data => this.fsService.setActive(data));
     });
   }
 }

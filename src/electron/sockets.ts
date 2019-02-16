@@ -7,7 +7,7 @@ import usage from './usage';
 class Sockets {
   readonly port = 3000;
 
-  private readonly _events = ['cpu', 'memory', 'network', 'processes', 'battery', 'load'];
+  private readonly _events = ['cpu', 'memory', 'network', 'processes', 'battery', 'load', 'fs'];
   private readonly _io = io(this.port, {
     pingTimeout: 60000,
   });
@@ -27,6 +27,11 @@ class Sockets {
 
       socket.on('os', (data, fn) => {
         system.osInfo().then(res => fn(res))
+                       .catch(err => logger.error(err));
+      });
+
+      socket.on('fs', (data, fn) => {
+        system.fsSize().then(res => fn(res))
                        .catch(err => logger.error(err));
       });
     });

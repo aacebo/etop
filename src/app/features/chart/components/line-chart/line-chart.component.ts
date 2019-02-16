@@ -12,4 +12,5 @@ export class LineChartComponent {
   @Input() data: IChartData[] = [];
   @Input() ymin = 0;
   @Input() ymax = 100;
+  @Input() colorScheme = 'horizon';
 }

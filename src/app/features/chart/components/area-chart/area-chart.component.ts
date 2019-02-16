@@ -12,4 +12,5 @@ export class AreaChartComponent {
   @Input() data: IChartData[] = [];
   @Input() ymin = 0;
   @Input() ymax = 100;
+  @Input() colorScheme = 'horizon';
 }

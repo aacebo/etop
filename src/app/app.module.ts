@@ -18,6 +18,7 @@ import {
   BatteryModule,
   NetworkModule,
   LoadModule,
+  FileSystemModule,
 } from './shared';
 
 import 'hammerjs';
@@ -45,6 +46,7 @@ import 'hammerjs';
     BatteryModule,
     NetworkModule,
     LoadModule,
+    FileSystemModule,
   ],
   bootstrap: [AppComponent],
 })

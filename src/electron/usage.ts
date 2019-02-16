@@ -25,6 +25,9 @@ class Usage {
 
       system.currentLoad().then(data => this.output.emit('load', data))
                           .catch(err => logger.error(err));
+
+      system.fsStats().then(data => this.output.emit('fs', data))
+                      .catch(err => logger.error(err));
     }, 2000);
   }
 }
