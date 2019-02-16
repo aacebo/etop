@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MemoryComponent } from './memory.component';
+import { MemoryUsageChartComponent, SwapUsageChartComponent } from '../../components';
+import { ChartModule } from '../../../chart';
+import { MemoryModule } from '../../../../shared';
 
 describe('MemoryComponent', () => {
   let component: MemoryComponent;
@@ -8,7 +14,8 @@ describe('MemoryComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MemoryComponent ],
+      declarations: [ MemoryComponent, MemoryUsageChartComponent, SwapUsageChartComponent ],
+      imports: [ChartModule, MatCardModule, FlexLayoutModule, NoopAnimationsModule, MemoryModule],
     })
     .compileComponents();
   }));

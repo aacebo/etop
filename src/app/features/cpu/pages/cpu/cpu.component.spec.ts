@@ -1,6 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { CpuComponent } from './cpu.component';
+import { CpuLoadChartComponent, LoadChartComponent } from '../../components';
+import { ChartModule } from '../../../chart';
+import { LoadModule } from '../../../../shared';
 
 describe('CpuComponent', () => {
   let component: CpuComponent;
@@ -8,7 +14,8 @@ describe('CpuComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CpuComponent ],
+      declarations: [ CpuComponent, CpuLoadChartComponent, LoadChartComponent ],
+      imports: [ChartModule, MatCardModule, FlexLayoutModule, LoadModule, NoopAnimationsModule],
     })
     .compileComponents();
   }));
