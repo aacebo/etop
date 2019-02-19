@@ -4,10 +4,12 @@ import { MatCardModule } from '@angular/material';
 
 import { ChartModule } from '../chart';
 import { FileSystemComponent } from './pages';
+import { DeviceUsageChartComponent } from './components';
+import { FileSystemModule as SharedFileSystemModule } from '../../shared';
 
 @NgModule({
-  declarations: [FileSystemComponent],
-  exports: [],
-  imports: [CommonModule, ChartModule, MatCardModule],
+  declarations: [FileSystemComponent, DeviceUsageChartComponent],
+  exports: [DeviceUsageChartComponent],
+  imports: [CommonModule, ChartModule, MatCardModule, SharedFileSystemModule],
 })
 export class FileSystemModule { }

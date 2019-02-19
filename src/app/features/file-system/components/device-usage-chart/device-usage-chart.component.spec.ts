@@ -2,24 +2,24 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 
-import { MemoryModule } from '../../../../shared';
 import { ChartModule } from '../../../chart';
-import { SwapUsageChartComponent } from './swap-usage-chart.component';
+import { FileSystemModule } from '../../../../shared';
+import { DeviceUsageChartComponent } from './device-usage-chart.component';
 
-describe('SwapUsageChartComponent', () => {
-  let component: SwapUsageChartComponent;
-  let fixture: ComponentFixture<SwapUsageChartComponent>;
+describe('DeviceUsageChartComponent', () => {
+  let component: DeviceUsageChartComponent;
+  let fixture: ComponentFixture<DeviceUsageChartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SwapUsageChartComponent ],
-      imports: [NoopAnimationsModule, MatCardModule, MemoryModule, ChartModule],
+      declarations: [ DeviceUsageChartComponent ],
+      imports: [ChartModule, MatCardModule, FileSystemModule, NoopAnimationsModule],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SwapUsageChartComponent);
+    fixture = TestBed.createComponent(DeviceUsageChartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

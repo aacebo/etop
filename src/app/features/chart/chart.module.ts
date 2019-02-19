@@ -1,17 +1,34 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { LineChartModule, AreaChartModule } from '@swimlane/ngx-charts';
+import {
+  LineChartModule,
+  AreaChartModule,
+  PieChartModule,
+} from '@swimlane/ngx-charts';
 
-import { LineChartComponent, AreaChartComponent } from './components';
+import {
+  LineChartComponent,
+  AreaChartComponent,
+  PieChartComponent,
+} from './components';
 
 @NgModule({
-  declarations: [LineChartComponent, AreaChartComponent],
-  exports: [LineChartComponent, AreaChartComponent],
+  declarations: [
+    LineChartComponent,
+    AreaChartComponent,
+    PieChartComponent,
+  ],
+  exports: [
+    LineChartComponent,
+    AreaChartComponent,
+    PieChartComponent,
+  ],
   imports: [
     CommonModule,
     LineChartModule,
     AreaChartModule,
+    PieChartModule,
     FlexLayoutModule,
   ],
 })

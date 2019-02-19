@@ -1,1 +1,1 @@
-export { IChartData } from './chart-data.model';
+export { IChartData, IChartEntry } from './chart-data.model';

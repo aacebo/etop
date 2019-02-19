@@ -16,6 +16,7 @@ import {
   BatteryModule,
   NetworkModule,
   LoadModule,
+  FileSystemModule,
 } from './shared';
 
 describe('AppComponent', () => {
@@ -39,6 +40,7 @@ describe('AppComponent', () => {
         BatteryModule,
         NetworkModule,
         LoadModule,
+        FileSystemModule,
       ],
       providers: [
         socketServiceMockProvider,

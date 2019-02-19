@@ -1,4 +1,9 @@
+export interface IChartEntry {
+  name: string;
+  value: number | string;
+}
+
 export interface IChartData {
   name: string;
-  series: { name: string; value: number | string }[];
+  series: IChartEntry[];
 }

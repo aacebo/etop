@@ -30,7 +30,7 @@ export class NetworkUsageChartComponent {
           series: v.history.reduce((prev, curr) => [ ...prev, ...curr ], [])
                            .map((o, i) => ({
                              name: i.toString(),
-                             value: o ? o.rx_sec.toFixed(2) : 0,
+                             value: (o && o.rx_sec) ? o.rx_sec.toFixed(2) : 0,
                            })),
         },
         {
@@ -38,7 +38,7 @@ export class NetworkUsageChartComponent {
           series: v.history.reduce((prev, curr) => [ ...prev, ...curr ], [])
                            .map((o, i) => ({
                               name: i.toString(),
-                              value: o ? o.tx_sec.toFixed(2) : 0,
+                              value: (o && o.tx_sec) ? o.tx_sec.toFixed(2) : 0,
                             })),
         },
       ]),
