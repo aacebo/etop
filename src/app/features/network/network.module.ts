@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { NetworkModule as SharedNetworkModule } from '../../shared';
+import { NetworkModule as SharedNetworkModule } from '../../core';
 import { ChartModule } from '../chart';
 import { NetworkUsageChartComponent } from './components';
 import { NetworkComponent } from './pages';

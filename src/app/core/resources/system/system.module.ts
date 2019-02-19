@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { StoreModule } from '../store';
+import { StoreModule } from '../../../shared';
 import { SystemService } from './system.service';
 import { ISystemState } from './system.state';
 

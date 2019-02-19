@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { StoreModule } from '../store';
+import { StoreModule } from '../../../shared';
 import { NetworkService } from './network.service';
 import { INetworkState } from './network.state';
 

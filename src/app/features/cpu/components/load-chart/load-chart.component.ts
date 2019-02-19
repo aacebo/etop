@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { IChartData } from '../../../chart';
-import { LoadService } from '../../../../shared';
+import { LoadService } from '../../../../core';
 
 @Component({
   selector: 'app-load-chart',

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { IChartData } from '../../../chart';
-import { MemoryService } from '../../../../shared';
+import { MemoryService } from '../../../../core';
 
 @Component({
   selector: 'app-swap-usage-chart',

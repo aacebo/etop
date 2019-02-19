@@ -6,7 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { NetworkComponent } from './network.component';
 import { NetworkUsageChartComponent } from '../../components';
 import { ChartModule } from '../../../chart';
-import { NetworkModule } from '../../../../shared';
+import { NetworkModule } from '../../../../core';
 
 describe('NetworkComponent', () => {
   let component: NetworkComponent;

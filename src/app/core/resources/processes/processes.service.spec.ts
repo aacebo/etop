@@ -1,7 +1,7 @@
 import { async } from '@angular/core/testing';
 
 import { ProcessesService } from './processes.service';
-import { Store } from '../store';
+import { Store } from '../../../shared';
 
 describe('ProcessesService', () => {
   let service: ProcessesService;

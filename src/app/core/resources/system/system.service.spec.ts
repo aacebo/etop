@@ -1,5 +1,5 @@
 import { SystemService } from './system.service';
-import { Store } from '../store';
+import { Store } from '../../../shared';
 
 describe('SystemService', () => {
   let service: SystemService;

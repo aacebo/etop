@@ -2,8 +2,8 @@ import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 import { ISidenavItem } from './features';
+import { SocketService } from './shared';
 import {
-  SocketService,
   SystemService,
   CpuService,
   MemoryService,
@@ -12,7 +12,7 @@ import {
   NetworkService,
   LoadService,
   FileSystemService,
-} from './shared';
+} from './core';
 
 @Component({
   selector: 'app-root',

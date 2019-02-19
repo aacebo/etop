@@ -8,18 +8,7 @@ import { AppComponent } from './app.component';
 
 import { CoreModule } from './core';
 import { SidenavModule, ToolbarModule, DashboardModule } from './features';
-import {
-  StoreModule,
-  StoreDebugModule,
-  CpuModule,
-  MemoryModule,
-  SystemModule,
-  ProcessesModule,
-  BatteryModule,
-  NetworkModule,
-  LoadModule,
-  FileSystemModule,
-} from './shared';
+import { StoreModule, StoreDebugModule } from './shared';
 
 import 'hammerjs';
 
@@ -38,15 +27,6 @@ import 'hammerjs';
 
     StoreModule.forRoot(),
     StoreDebugModule,
-
-    CpuModule,
-    MemoryModule,
-    SystemModule,
-    ProcessesModule,
-    BatteryModule,
-    NetworkModule,
-    LoadModule,
-    FileSystemModule,
   ],
   bootstrap: [AppComponent],
 })

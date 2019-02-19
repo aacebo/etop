@@ -3,7 +3,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 
 import { ChartModule } from '../../../chart';
-import { FileSystemModule } from '../../../../shared';
+import { FileSystemModule } from '../../../../core';
 import { DeviceUsageChartComponent } from './device-usage-chart.component';
 
 describe('DeviceUsageChartComponent', () => {

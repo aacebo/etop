@@ -6,7 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MemoryComponent } from './memory.component';
 import { MemoryUsageChartComponent, SwapUsageChartComponent } from '../../components';
 import { ChartModule } from '../../../chart';
-import { MemoryModule } from '../../../../shared';
+import { MemoryModule } from '../../../../core';
 
 describe('MemoryComponent', () => {
   let component: MemoryComponent;

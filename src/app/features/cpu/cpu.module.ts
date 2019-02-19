@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { LoadModule } from '../../shared';
+import { LoadModule } from '../../core';
 import { ChartModule } from '../chart';
 import { CpuLoadChartComponent, LoadChartComponent } from './components';
 import { CpuComponent } from './pages';

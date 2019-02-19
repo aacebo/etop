@@ -3,7 +3,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 
 import { ChartModule } from '../../../chart';
-import { LoadModule } from '../../../../shared';
+import { LoadModule } from '../../../../core';
 import { CpuLoadChartComponent } from './cpu-load-chart.component';
 
 describe('CpuLoadChartComponent', () => {

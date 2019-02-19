@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { IChartData } from '../../../chart';
-import { NetworkService } from '../../../../shared';
+import { NetworkService } from '../../../../core';
 
 @Component({
   selector: 'app-network-usage-chart',

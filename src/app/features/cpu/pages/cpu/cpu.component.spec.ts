@@ -6,7 +6,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { CpuComponent } from './cpu.component';
 import { CpuLoadChartComponent, LoadChartComponent } from '../../components';
 import { ChartModule } from '../../../chart';
-import { LoadModule } from '../../../../shared';
+import { LoadModule } from '../../../../core';
 
 describe('CpuComponent', () => {
   let component: CpuComponent;

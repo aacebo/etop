@@ -3,7 +3,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 
 import { ChartModule } from '../../../chart';
-import { MemoryModule } from '../../../../shared';
+import { MemoryModule } from '../../../../core';
 import { MemoryUsageChartComponent } from './memory-usage-chart.component';
 
 describe('MemoryUsageChartComponent', () => {

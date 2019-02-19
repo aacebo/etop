@@ -3,7 +3,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { FileSystemModule } from '../../../../shared';
+import { FileSystemModule } from '../../../../core';
 import { ChartModule } from '../../../chart';
 import { DeviceUsageChartComponent } from '../../components';
 import { FileSystemComponent } from './file-system.component';

@@ -3,7 +3,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 
 import { ChartModule } from '../../../chart';
-import { NetworkModule } from '../../../../shared';
+import { NetworkModule } from '../../../../core';
 import { NetworkUsageChartComponent } from './network-usage-chart.component';
 
 describe('NetworkUsageChartComponent', () => {

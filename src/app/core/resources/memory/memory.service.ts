@@ -2,8 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Systeminformation } from 'systeminformation';
 
 import { IMemoryState } from './memory.state';
-import { Store } from '../store';
-import { QueueServiceTemplate } from '../../templates';
+import { Store, QueueServiceTemplate } from '../../../shared';
 
 @Injectable()
 export class MemoryService extends QueueServiceTemplate<Systeminformation.MemData> {

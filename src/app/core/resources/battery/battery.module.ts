@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { StoreModule } from '../store';
+import { StoreModule } from '../../../shared';
 import { BatteryService } from './battery.service';
 import { IBatteryState } from './battery.state';
 

@@ -2,8 +2,27 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
 
 import { AppErrorHandlerService } from './error-handler';
+import {
+  CpuModule,
+  MemoryModule,
+  SystemModule,
+  ProcessesModule,
+  BatteryModule,
+  NetworkModule,
+  LoadModule,
+  FileSystemModule,
+} from './resources';
 
-const modules = [];
+const modules = [
+  CpuModule,
+  MemoryModule,
+  SystemModule,
+  ProcessesModule,
+  BatteryModule,
+  NetworkModule,
+  LoadModule,
+  FileSystemModule,
+];
 
 @NgModule({
   imports: modules,

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { IChartEntry } from '../../../chart';
-import { FileSystemService } from '../../../../shared';
+import { FileSystemService } from '../../../../core';
 
 @Component({
   selector: 'app-device-usage-chart',

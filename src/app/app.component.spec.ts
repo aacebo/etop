@@ -4,11 +4,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { SidenavModule, ToolbarModule } from './features';
+
 import {
   SocketService,
   socketServiceMockProvider,
   StoreModule,
   StoreDebugModule,
+} from './shared';
+
+import {
   CpuModule,
   MemoryModule,
   SystemModule,
@@ -17,7 +21,7 @@ import {
   NetworkModule,
   LoadModule,
   FileSystemModule,
-} from './shared';
+} from './core';
 
 describe('AppComponent', () => {
   let component: AppComponent;

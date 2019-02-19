@@ -1,7 +1,7 @@
 import { async } from '@angular/core/testing';
 
 import { BatteryService } from './battery.service';
-import { Store } from '../store';
+import { Store } from '../../../shared';
 
 describe('BatteryService', () => {
   let service: BatteryService;

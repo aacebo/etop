@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material';
 
-import { MemoryModule } from '../../../../shared';
+import { MemoryModule } from '../../../../core';
 import { ChartModule } from '../../../chart';
 import { SwapUsageChartComponent } from './swap-usage-chart.component';
 

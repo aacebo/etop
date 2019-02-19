@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 
 import { IBatteryState } from './battery.state';
-import { Store } from '../store';
+import { Store } from '../../../shared';
 
 @Injectable()
 export class BatteryService {
